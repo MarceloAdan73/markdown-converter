@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#3b82f6" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="application-name" content="Markdown Converter">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Markdown Converter">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- iOS Icons -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- SEO y Open Graph -->
+    <meta name="description" content="Transforma texto plano en Markdown profesional con conversión automática en tiempo real y preview estilo GitHub." />
+    <meta name="keywords" content="markdown, converter, github, editor, texto, documentación, developer, tools" />
+    <meta name="author" content="Markdown Converter Team" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Markdown Converter" />
+    <meta property="og:description" content="Transforma texto plano en Markdown profesional" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Markdown Converter" />
+    <meta property="twitter:description" content="Transforma texto plano en Markdown profesional" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+    
+    <title>Markdown Converter - Transforma texto en Markdown</title>
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: 'Inter', sans-serif;">
+        <h1 style="color: #3b82f6; margin-bottom: 20px;">Markdown Converter</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">
+          Necesitas habilitar JavaScript para ejecutar esta aplicación.
+        </p>
+        <p style="color: #64748b;">
+          Esta aplicación convierte texto plano a Markdown con preview en tiempo real.
+        </p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+
+    <!-- Service Worker Registration -->
+    <script>
+      // Registrar Service Worker para PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('Service Worker registrado con éxito:', registration.scope);
+              
+              // Escuchar actualizaciones
+              registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                console.log('Nuevo Service Worker encontrado:', newWorker);
+                
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    console.log('Nueva versión disponible. Recarga para actualizar.');
+                    // Puedes mostrar notificación
+                    if (confirm('¡Nueva versión disponible! ¿Recargar para actualizar?')) {
+                      window.location.reload();
+                    }
+                  }
+                });
+              });
+            })
+            .catch(error => {
+              console.error('Error registrando Service Worker:', error);
+            });
+        });
+
+        // Detectar si la app está instalada como PWA
+        window.addEventListener('appinstalled', (evt) => {
+          console.log('¡Aplicación instalada como PWA!');
+          localStorage.setItem('pwa_installed', 'true');
+        });
+
+        // Manejar el evento beforeinstallprompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+          console.log('PWA puede ser instalada');
+          localStorage.setItem('pwa_prompt_available', 'true');
+          
+          // Mostrar botón de instalación después de 5 segundos
+          setTimeout(() => {
+            if (localStorage.getItem('pwa_installed') !== 'true') {
+              const installBtn = document.createElement('button');
+              installBtn.id = 'install-pwa-btn';
+              installBtn.innerHTML = '⬇️ Instalar App';
+              installBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 24px;
+                background: #3b82f6;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                font-weight: bold;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                z-index: 10000;
+                font-family: 'Inter', sans-serif;
+              `;
+              installBtn.addEventListener('click', () => {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                  if (choiceResult.outcome === 'accepted') {
+                    console.log('Usuario aceptó instalar');
+                  }
+                  deferredPrompt = null;
+                  installBtn.remove();
+                });
+              });
+              document.body.appendChild(installBtn);
+              
+              // Auto-remover después de 30 segundos
+              setTimeout(() => installBtn.remove(), 30000);
+            }
+          }, 5000);
+        });
+      }
+
+      // Detectar modo standalone (PWA instalada)
+      if (window.matchMedia('(display-mode: standalone)').matches) {
+        console.log('Ejecutando como PWA instalada');
+        document.documentElement.classList.add('pwa-installed');
+      }
+    </script>
+  </body>
+</html>

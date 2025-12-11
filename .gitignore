@@ -1,0 +1,68 @@
+# Dependencies
+/node_modules
+/node_modules/*
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Production
+/dist
+/dist-electron
+/build
+/release
+/out
+
+# Misc
+.DS_Store
+*.pem
+*.log
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# React/TypeScript
+.eslintcache
+*.tsbuildinfo
+
+# Cache
+.cache
+.parcel-cache
+.next
+.nuxt
+
+# Testing
+coverage/
+.nyc_output
+
+# Package managers
+package-lock.json (ya tienes, pero npm recomienda subirlo)
+# NOTA: Algunos proyectos SÍ suben package-lock.json para consistencia
+
+# Windows
+desktop.ini
+
+# Linux
+*~
+
+# macOS
+*.DS_Store
+__MACOSX
+
+# Electron (adicionales)
+release/builds/
+.electron-builder
+
+# React development
+.eslintrc
+.prettierrc
