@@ -1,11 +1,3 @@
-# Corregir README.md con iconos legibles y enlace actualizado
-cat > README.md << 'EOF'
-# 🚀 Markdown Converter App
-
-**Convert plain text to GitHub flavored Markdown** with real-time preview and PWA support.
-
-![Markdown Converter](https://markdown-converter-six.vercel.app/logo512.png)
-
 ## 🌐 Live Demo
 [![Open Live Demo](https://img.shields.io/badge/🌐-Live_Demo-blue)](https://markdown-converter-six.vercel.app/)
 [![Vercel Deploy](https://img.shields.io/badge/▲-Deployed_on_Vercel-black)](https://vercel.com)
