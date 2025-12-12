@@ -20,11 +20,11 @@
 
 ## 📸 Application Preview
 
-![Markdown Converter](https://github.com/MarceloAdan73/markdown-converter/raw/main/screen1.png)
+![Markdown Converter](https://github.com/MarceloAdan73/markdown-converter/screen1.png)
 
 | Desktop View | Mobile View | Dark Mode |
 |--------------|-------------|-----------|
-| ![Desktop](https://github.com/MarceloAdan73/markdown-converter/raw/main/screen1.png) | *Coming soon* | *Coming soon* |
+| ![Desktop](https://github.com/MarceloAdan73/markdown-converter/screen1.png) | *Coming soon* | *Coming soon* |
 
 ---
 
