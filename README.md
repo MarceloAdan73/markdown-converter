@@ -92,16 +92,31 @@ Plain Text → [Intelligent Conversion] → GitHub Markdown ✅
 
 ## 📁 Project Architecture
 
-| Directorio | Archivos Principales | Descripción |
-|------------|---------------------|-------------|
-| **🗂️ src/** | `App.tsx` (711 lines)<br>`App.css` (31,656 lines)<br>`index.tsx`<br>`SvgIcons.jsx` | Componentes React y estilos |
-| **🖥️ electron/** | `main.js` (987 bytes)<br>`preload.js` (506 bytes) | Configuración Electron |
-| **🌐 public/** | `manifest.json`<br>`service-worker.js`<br>`logo96.png`<br>`logo144.png`<br>`logo192.png`<br>`logo512.png` | Recursos PWA |
-| **📦 build/** | Archivos compilados | Build de producción (742KB) |
-| **📄** | `package.json` | Dependencias y scripts |
-| **📄** | `tsconfig.json` | Configuración TypeScript |
-| **📸** | `screen1.png` | Captura de pantalla |
-| **📖** | `README.md` | Documentación |
+## 📁 Project Architecture
+
+```text
+markdown-converter/
+├── 🗂️ src/
+│   ├── 🎨 App.tsx (711 lines)           # Main React component
+│   ├── 🎨 App.css (31,656 lines)        # Complete styling system
+│   ├── 🏠 index.tsx                     # Application entry point
+│   └── 🎭 SvgIcons.jsx                  # SVG icon components
+├── 🖥️ electron/
+│   ├── ⚙️ main.js (987 bytes)           # Electron main process
+│   └── 🔗 preload.js (506 bytes)        # Electron preload script
+├── 🌐 public/
+│   ├── 📄 manifest.json                 # PWA configuration
+│   ├── ⚙️ service-worker.js             # Service worker
+│   ├── 🖼️ logo96.png                    # PWA icons (96x96)
+│   ├── 🖼️ logo144.png                   # PWA icons (144x144)
+│   ├── 🖼️ logo192.png                   # PWA icons (192x192)
+│   └── 🖼️ logo512.png                   # PWA icons (512x512)
+├── 📦 build/ (742KB)                    # Production build
+├── 📄 package.json                      # Dependencies & scripts
+├── 📄 tsconfig.json                     # TypeScript configuration
+├── 📸 screen1.png                       # Application screenshot
+└── 📖 README.md                         # This documentation
+```
 
 ---
 
