@@ -105,20 +105,3 @@ class MarkdownConverter {
   static formatAs(type: string, text: string): string { ... }
 }
 ```
-## 📁 Project Architecture
-├── 🖥️ electron/
-│   ├── ⚙️ main.js (987 bytes)           # Electron main process
-│   └── 🔗 preload.js (506 bytes)        # Electron preload script
-├── 🌐 public/
-│   ├── 📄 manifest.json                 # PWA configuration
-│   ├── ⚙️ service-worker.js             # Service worker
-│   ├── 🖼️ logo96.png                    # PWA icons (96x96)
-│   ├── 🖼️ logo144.png                   # PWA icons (144x144)
-│   ├── 🖼️ logo192.png                   # PWA icons (192x192)
-│   └── 🖼️ logo512.png                   # PWA icons (512x512)
-├── 📦 build/ (742KB)                    # Production build
-├── 📄 package.json                      # Dependencies & scripts
-├── 📄 tsconfig.json                     # TypeScript configuration
-├── 📸 screen1.png                       # Application screenshot
-└── 📖 README.md                         # This documentation
-
