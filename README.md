@@ -105,3 +105,168 @@ class MarkdownConverter {
   static formatAs(type: string, text: string): string { ... }
 }
 ```
+
+### **Detection Rules**
+| Element | Pattern | Output |
+|---------|---------|--------|
+| **H1 Header** | Line < 30 chars after empty line | `# Title` |
+| **H2 Header** | Line 30-60 chars in context | `## Subtitle` |
+| **Lists** | Lines starting with `-`, `*`, `•`, `1.` | `- Item` |
+| **Code Blocks** | 4+ leading spaces | `\`\`\`\ncode\n\`\`\`` |
+| **Inline Code** | Text between backticks | `` `code` `` |
+| **Bold Text** | Text between `**` | `**bold**` |
+| **Italic Text** | Text between `*` | `*italic*` |
+| **Links** | HTTP/HTTPS URLs | `[text](url)` |
+
+---
+
+## 🚀 Installation & Usage
+
+### **Option 1: Web PWA (Recommended)**
+1. Visit **[markdown-converter-six.vercel.app](https://markdown-converter-six.vercel.app/)**
+2. Click the **📥 Install** icon in your browser's address bar
+3. Select **"Install Markdown Converter"**
+4. Use as a native app with full offline support
+
+### **Option 2: Desktop Application**
+```bash
+# Clone the repository
+git clone https://github.com/MarceloAdan73/markdown-converter.git
+cd markdown-converter
+
+# Install dependencies
+npm install
+
+# Development mode (web only)
+npm start
+# Open: http://localhost:3000
+
+# Development with Electron
+npm start  # Opens both React dev server + Electron window
+
+# Production build
+npm run build
+# Builds to /build directory
+```
+### **Option 3: Build Desktop Executables**
+(Requires electron-builder)
+```
+# Install electron-builder globally
+npm install -g electron-builder
+
+# Build for current platform
+npm run build
+electron-builder --dir
+
+# Build installers
+electron-builder -w  # Windows
+electron-builder -m  # macOS
+electron-builder -l  # Linux
+```
+## 📋 Available Scripts
+
+| Script | Command | Description |
+|--------|---------|-------------|
+| **Start Development** | `npm start` | Concurrently runs React + Electron |
+| **Web Only** | `npm run dev:react` | React dev server (http://localhost:3000) |
+| **Electron Only** | `npm run dev:electron` | Electron app (requires React running) |
+| **Build Production** | `npm run build` | Creates optimized production build |
+| **Run Tests** | `npm test` | Runs test suites |
+| **Eject** | `npm run eject` | Ejects from Create React App |
+
+## 🎯 Use Cases
+
+### **Perfect For:**
+- **📝 GitHub README Creation** - Perfect for repository documentation
+- **📚 Technical Documentation** - Convert notes to structured markdown
+- **🎓 Learning Markdown** - Visual feedback helps understand syntax
+- **💼 Professional Writing** - Blog posts, articles, and documentation
+- **🔄 Content Migration** - Convert emails/documents to markdown format
+
+### **Workflow Example:**
+```text
+1. Type plain text in left editor
+2. Watch real-time conversion to markdown
+3. Preview exact GitHub rendering on right
+4. Click "Copy Markdown" for instant clipboard
+5. Paste directly into GitHub/GitLab/Bitbucket
+```
+## 🔧 Technical Details
+
+### **State Management**
+```typescript
+interface AppState {
+  inputText: string;       // Original plain text
+  convertedText: string;   // Converted markdown
+  isDarkMode: boolean;     // Theme preference
+  stats: {                 // Real-time statistics
+    chars: number;
+    lines: number; 
+    words: number;
+  };
+  notifications: Notification[]; // User feedback system
+}
+```
+### **Responsive Design System**
+- **📱 Mobile (<480px)**: Single column, stacked layout
+- **📱 Tablet (480-768px)**: Adaptive toolbar, 50vh editor/preview
+- **💻 Desktop (>1024px)**: Dual column, full feature set
+- **🌗 Theme System**: CSS variables for light/dark modes
+
+### **Performance Metrics**
+- **⚡ Conversion Speed**: < 1ms for average documents
+- **📦 Bundle Size**: 742KB production build
+- **🚀 Load Time**: Instant (pre-cached with service worker)
+- **💾 Memory Usage**: Minimal (single React component)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
+
+### **Development Guidelines**
+- Use TypeScript for all new code
+- Follow existing code style and patterns
+- Add tests for new functionality
+- Update documentation as needed
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Author
+
+**Marcelo Adan**  
+[![GitHub](https://img.shields.io/badge/GitHub-@MarceloAdan73-181717?style=flat-square&logo=github)](https://github.com/MarceloAdan73)
+
+---
+
+## 🏆 Acknowledgments
+
+- **React Team** for the amazing framework
+- **Electron Team** for desktop application capabilities
+- **Vercel** for seamless deployment
+- **GitHub** for Markdown specification and inspiration
+
+---
+
+<div align="center">
+
+### ⭐ If you find this tool useful, please consider giving it a star!
+
+**Built with ❤️ using React, TypeScript, and Electron**
+
+🎯 **Happy Markdown Converting!** 🎯
+
+</div>
