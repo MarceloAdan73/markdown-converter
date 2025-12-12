@@ -90,6 +90,21 @@ Plain Text → [Intelligent Conversion] → GitHub Markdown ✅
 
 ---
 
+## 📁 Project Architecture
+
+| Directorio | Archivos Principales | Descripción |
+|------------|---------------------|-------------|
+| **🗂️ src/** | `App.tsx` (711 lines)<br>`App.css` (31,656 lines)<br>`index.tsx`<br>`SvgIcons.jsx` | Componentes React y estilos |
+| **🖥️ electron/** | `main.js` (987 bytes)<br>`preload.js` (506 bytes) | Configuración Electron |
+| **🌐 public/** | `manifest.json`<br>`service-worker.js`<br>`logo96.png`<br>`logo144.png`<br>`logo192.png`<br>`logo512.png` | Recursos PWA |
+| **📦 build/** | Archivos compilados | Build de producción (742KB) |
+| **📄** | `package.json` | Dependencias y scripts |
+| **📄** | `tsconfig.json` | Configuración TypeScript |
+| **📸** | `screen1.png` | Captura de pantalla |
+| **📖** | `README.md` | Documentación |
+
+---
+
 ## 🔧 Conversion Algorithm
 
 ### **Intelligent Markdown Detection**
@@ -236,12 +251,6 @@ We welcome contributions! Here's how you can help:
 - Follow existing code style and patterns
 - Add tests for new functionality
 - Update documentation as needed
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
