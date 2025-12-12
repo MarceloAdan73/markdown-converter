@@ -1,54 +1,37 @@
-## 🌐 Live Demo
-[![Open Live Demo](https://img.shields.io/badge/🌐-Live_Demo-blue)](https://markdown-converter-six.vercel.app/)
-[![Vercel Deploy](https://img.shields.io/badge/▲-Deployed_on_Vercel-black)](https://vercel.com)
+# 🎯 Markdown Converter Pro
 
-🔗 **Live App:** https://markdown-converter-six.vercel.app/
+[![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Electron](https://img.shields.io/badge/Electron-27.3.11-47848F?style=for-the-badge&logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![PWA](https://img.shields.io/badge/PWA-Ready-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Windows](https://img.shields.io/badge/Windows-Supported-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/)
+[![macOS](https://img.shields.io/badge/macOS-Supported-000000?style=for-the-badge&logo=apple&logoColor=white)](https://www.apple.com/macos/)
+[![Linux](https://img.shields.io/badge/Linux-Supported-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)
 
-## ✨ Features
-- ✅ **Real-time conversion** - Text to GitHub Markdown
-- ✅ **PWA support** - Install as native app (📥 icon in browser)
-- ✅ **Desktop version** - Electron app for Windows/Mac/Linux
-- ✅ **GitHub-style preview** - Exact GitHub rendering
-- ✅ **Dark/Light mode** - Toggle between themes
-- ✅ **Responsive design** - Mobile, tablet, desktop
-- ✅ **Quick formatting** - Toolbar for common markdown
-- ✅ **Copy to clipboard** - One-click copy formatted markdown
-- ✅ **Statistics** - Character/line count in real-time
+## 🌐 Live Application
+**👉 [markdown-converter-six.vercel.app](https://markdown-converter-six.vercel.app/)**
 
-## 🛠️ Technologies
-- **React 18** + **TypeScript** - Frontend framework
-- **Electron** - Desktop application
-- **Custom CSS** - No frameworks, pure CSS
-- **Workbox** - PWA service workers
-- **Create React App** - Build tooling
+[![Open Live Demo](https://img.shields.io/badge/🌐-Live_Demo-blue?style=for-the-badge&logo=vercel)](https://markdown-converter-six.vercel.app/)
+[![Try PWA](https://img.shields.io/badge/📥-Install_PWA-green?style=for-the-badge&logo=pwa)](https://markdown-converter-six.vercel.app/)
 
-## 📦 Installation
+---
 
-### Option 1: Web PWA (Recommended)
-1. Visit the [Live Demo](https://markdown-converter-six.vercel.app/)
-2. Look for the 📥 install icon in your browser's address bar
-3. Click "Install Markdown Converter"
-4. Use it as a native app (works offline!)
+## 📸 Application Preview
 
-### Option 2: Local Development
-```bash
-# Clone repository
-git clone https://github.com/MarceloAdan73/markdown-converter.git
-cd markdown-converter
+![Markdown Converter](https://github.com/MarceloAdan73/markdown-converter/raw/main/screen1.png)
 
-# Install dependencies
-npm install
+| Desktop View | Mobile View | Dark Mode |
+|--------------|-------------|-----------|
+| ![Desktop](https://github.com/MarceloAdan73/markdown-converter/raw/main/screen1.png) | *Coming soon* | *Coming soon* |
 
-# Development (web only)
-npm start
-# Open: http://localhost:3000
+---
 
-# Development with Electron
-npm start
-# Opens both: React dev server + Electron window
+## 🚀 Overview
 
-# Production build
-npm run build
-npx serve -s build -l 5000
-# Open: http://localhost:5000 (with PWA support)
-```
+**Markdown Converter Pro** is an intelligent desktop and web application that transforms plain text into GitHub-compatible Markdown with real-time preview. Built with React, TypeScript, and Electron, it offers a seamless experience across all platforms with PWA support for offline use.
+
+### ⚡ **One-Click Experience**
+```text
+Plain Text → [Intelligent Conversion] → GitHub Markdown ✅
