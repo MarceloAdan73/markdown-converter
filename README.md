@@ -22,7 +22,7 @@
 
 | Desktop View | Dark Mode | Mobile View |
 |--------------|-----------|-------------|
-| ![Desktop](https://raw.githubusercontent.com/MarceloAdan73/markdown-converter/main/public/nuevo-nombre.png) | ![Dark Mode](https://raw.githubusercontent.com/MarceloAdan73/markdown-converter/main/public/screen2.png) | ![Mobile](https://raw.githubusercontent.com/MarceloAdan73/markdown-converter/main/public/screen3.png) |
+| ![Desktop](https://raw.githubusercontent.com/MarceloAdan73/markdown-converter/main/public/screen1.png) | ![Dark Mode](https://raw.githubusercontent.com/MarceloAdan73/markdown-converter/main/public/screen2.png) | ![Mobile](https://raw.githubusercontent.com/MarceloAdan73/markdown-converter/main/public/screen3.png) |
 
 ---
 
